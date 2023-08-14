@@ -1,2 +1,2 @@
-public class MyException {
+public class MyException extends RuntimeException {
 }
