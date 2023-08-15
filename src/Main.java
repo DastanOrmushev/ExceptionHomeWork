@@ -1,3 +1,5 @@
+import Exceptions.MyException;
+
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
@@ -33,9 +35,10 @@ public class Main {
 
         try {
             auth2(log, word);
-        } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
+        }catch (MyException e){
+            System.out.println(e.getMessage());
         }
+
 
 
     }
@@ -88,11 +91,11 @@ public class Main {
         System.out.println("Authorization was successful");
     }
 
-    static void auth2 (String log, String word) throws FileNotFoundException {
+    static void auth2 (String log, String word) throws RuntimeException, MyException {
         if(!log.equals("adm")){
-            throw new FileNotFoundException("Wrong LOG");
+            throw new MyException("Login is wrong");
         }if (!word.equals("123")){
-            throw  new FileNotFoundException("Wrong WORD");
+            throw  new RuntimeException("Wrong WORD");
         }
         System.out.println("Authorization successful");
     }
