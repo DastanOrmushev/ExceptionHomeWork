@@ -11,7 +11,6 @@ public class Main {
     Создать свой exception checked и unchecked
     */
     public static void main(String[] args) {
-
        System.out.println(getNumber());
         showForExample();
         test();
